@@ -1,13 +1,26 @@
-# Sandworm profile
+# Pyramid of pain, even for state actors
+The "Pyraimd of pain", a concept you might have heard of in InfoSec, essentially suggests that the most difficult indicators of attack for an adversary to change are their TTPs.
+
+![](./pyramidofpain.png)
+
+Looking through the MITRE ATT&CK groups and their [profile](https://attack.mitre.org/groups/) on the ATT&CK website, I was curious to see how this principle applies to state actors.
+
+Having recently read Andy Greenberg's "Sandworm", which piqued my interest in this subject, the natural choice was to look into the Sandworm profile.
+
 With the [recent indictment](https://www.justice.gov/opa/pr/six-russian-gru-officers-charged-connection-worldwide-deployment-destructive-malware-and) of 6 GRU officers, who were involved in some of the most destructive malware campaigns across the world, as part of the "Sandworm" group, some of the previously reported attributions have been finally acknowledged by the DoJ.
 
-Andy Greenberg's "Sandworm" is a great book on the subject, and it was what originally got me interested.
+## TTPs
 
-This is a summary of the techniques and tools used by the group in their most destructive attacks.
+Over the 2015-2018 period, the group used a variery of existing and new components to develop malware for targetted and non-targetted campaigns. These attacks, although varying in types of payloads and exploits used, highlight the fact that even for a state actor, the [pyramid of pain](https://attackiq.com/2019/06/26/emulating-attacker-activities-and-the-pyramid-of-pain/) is still an applicable principle.
 
-Over the 2015-2018 period, the group used a variery of existing and new components to develop malware for targetted and non-targetted campaigns.
+A look into the TTPs through the MITRE ATT&CK lense, by overlaying the TTPs used in each attack outlined below shows the concentration of the groups' used methods in certain areas.
 
-## Dec, 2015: Black Energy, Killdisk, Ukranian Energy
+_Right Click + View Image to enlarge_
+![](layer_by_operation.svg)
+
+## A look into the tools in each attack
+
+### Dec, 2015: Black Energy, Killdisk, Ukranian Energy
 The tools used in this attack were based on Black Energy, originally a DDoS tool ([Black Energy DDoS Bot Analysis, Jose Nazario](./BlackEnergy+DDoS+Bot+Analysis.pdf)). The malware was delivered to the target systems through spearphishing emails. The malware got the attackers remote access and they used Killdisk to wipe out disk contents.
 
 ## Dec 2016: Black Energy, Killdisk, Industroyer, Ukranian Ministry of finance and treasury
@@ -22,7 +35,7 @@ Here is a graph of the IoCs and their relationship I put together, based on what
 </iframe>
 
 ## June 2017: NotPetya
-This might have been the most destructive tool the crew used. The attack started at a Ukranian accounting firm and spread through the update mechanism for one of the accounting software provided by the company.
+This might have been the most destructive tool the group used. The attack started at a Ukranian accounting firm and spread through the update mechanism for one of the accounting software provided by the company.
 
 The exploits used in this attack were some of the leaked NSA exploits by Shadow Brokers like EternalBlue or EternalRomance.
 
@@ -48,15 +61,11 @@ Similar attacks continued over the period of Dec 2017-Feb 2018 targetting other 
   height="400">
 </iframe>
 
-
 This attack went on further to use several different payload types, from zip archives to executables and mobile apps.
 
 [Another](https://darknetdiaries.com/episode/77/) great Darknet Diaries episode on this.
 
-## Techniques
-The following MITRE ATT&CK heat map shows the techniques used in the malware campaigns by the group. 
+An [article](https://securelist.com/olympic-destroyer-is-still-alive/86169/) from 2018 from Kaspersky labs suggests that the campaign went on to take on a number of other targets till late 2018.
 
-TTPs used show that the "pyramid of pain" principle is applicable to Sandworm as well.
-
-_Right Click + View Image to enlarge_
-![](layer_by_operation.svg)
+## The team
+Looking at the charges against those in the group, one can imagine how the skillset and the experience in the team drives this behavior.
